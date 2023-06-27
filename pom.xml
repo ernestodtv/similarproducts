@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>3.1.1</version>
+			<version>2.7.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.openapitools</groupId>
@@ -77,8 +77,8 @@
 								${project.basedir}/similarProducts.yaml
 							</inputSpec>
 							<generatorName>spring</generatorName>
-							<apiPackage>com.zara.similarproducts.api</apiPackage>
-							<modelPackage>com.zara.similarproducts.model</modelPackage>
+							<apiPackage>com.api.openapi</apiPackage>
+							<modelPackage>com.api.openapi</modelPackage>
 							<supportingFilesToGenerate>
 								ApiUtil.java
 							</supportingFilesToGenerate>
