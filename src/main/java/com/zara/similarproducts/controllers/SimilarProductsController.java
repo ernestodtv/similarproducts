@@ -22,7 +22,7 @@ public class SimilarProductsController implements ProductApi {
   @Override
   public ResponseEntity<Set<ProductDetail>> getProductSimilar(String productId) {
     var similarProducts = similarProductsService.getSimilarProducts(productId);
-    return null;
+    return ResponseEntity.ok(similarProducts);
   }
 
 }

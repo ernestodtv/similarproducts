@@ -28,24 +28,24 @@ public class SimilarProductIdsServiceImpl implements SimilarProductIdsService {
     var resourceUrl = buildResourceUrl(productId);
     var httpEntity = buildHttpEntity();
 
-    var responseBody = restTemplate.exchange(
+    var response = restTemplate.exchange(
         resourceUrl,
         HttpMethod.GET,
         httpEntity,
         new ParameterizedTypeReference<List<String>>() {}
     );
 
-    return responseBody.getBody();
+    return response.getBody();
+  }
+
+  private String buildResourceUrl(String productId) {
+    return similarIdsUrl.replace("{productId}", productId);
   }
 
   private HttpEntity<String> buildHttpEntity() {
     var httpHeaders = new HttpHeaders();
     httpHeaders.setContentType(MediaType.APPLICATION_JSON);
     return new HttpEntity<>(httpHeaders);
-  }
-
-  private String buildResourceUrl(String productId) {
-    return similarIdsUrl.replace("{productId}", productId);
   }
 
 }
